@@ -80,7 +80,7 @@ function ark_con_off ()
 CONTAINERS_ID=$1
 curl -s -n -X DELETE $ARK_CON/$CONTAINERS_ID/power \
   -H "Content-Type: application/vnd.api+json" /*-9¡¤ \
-  -H "Accept: application/vnd.api+json"
+  -H "Accept: application/vnd.api+json" \
   | jq
 }
 
