@@ -43,6 +43,98 @@ machine app.arukas.io
 EOF
 }
 
+function ark_appsetconfig ()
+{
+#ark_appsetconfig image_name instances_num mem cmd envs ports
+
+cat <<EOF
+{
+  "data": [
+    {
+      "type": "containers",
+      "attributes": {
+        "image_name": "$1",
+        "instances": 1,
+        "mem": 256,
+        "cmd": "nginx -g \"daemon off;\"",
+        "envs": [
+          {
+            "key": "ENVSAMPLE",
+            "value": "VALUE"
+          }
+        ],
+        "ports": [
+          {
+            "number": 80,
+            "protocol": "tcp"
+          },
+          {
+            "number": 443,
+            "protocol": "tcp"
+          }
+        ],
+        "arukas_domain": "endpoint-sample"
+      }
+    },
+    {
+      "type": "apps",
+      "attributes": {
+        "name": "app-sample"
+      }
+    }
+  ]
+}'
+EOF
+}
+
+function ark_appsetconfigss ()
+{
+#                 1          2                 3      4        5
+#ark_appsetconfig image_name instances_num mem METHOD PASSWORD ports
+cat <<EOF
+{
+  "data": [
+    {
+      "type": "containers",
+      "attributes": {
+        "image_name": "$1",
+        "instances": $2,
+        "mem": $3,
+        "cmd": null,
+        "envs": [
+          {
+            "key": "METHOD",
+            "value": "$3"
+          },
+          {
+            "key": "PASSWORD",
+            "value": "$3"
+          }
+        ],
+        "ports": [
+          {
+            "number": 8388,
+            "protocol": "tcp"
+          },
+          {
+            "number": 8388,
+            "protocol": "udp"
+          }
+        ],
+        "arukas_domain": "endpoint-sample"
+      }
+    },
+    {
+      "type": "apps",
+      "attributes": {
+        "name": "app-sample"
+      }
+    }
+  ]
+}'
+EOF
+}
+
 function ark_setkey ()
 {
 ARUKAS_TOKEN=$1
