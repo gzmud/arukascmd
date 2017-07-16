@@ -1,0 +1,2 @@
+# arukascmd
+cli for arukas
