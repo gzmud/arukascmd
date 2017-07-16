@@ -127,4 +127,4 @@ curl -s -n -X POST https://app.arukas.io/api/app-sets \
   -H "Content-Type: application/vnd.api+json"  \
   -H "Accept: application/vnd.api+json" \
   | jq
-}
+
