@@ -16,9 +16,9 @@
 #
 
 ARK_PANEL="https://app.arukas.io"
-ARK_APPS=$PANEL/api/apps
-ARK_APPSET=$PANEL/app-sets
-ARK_CON=$PANEL/containers
+ARK_APPS=$ARK_PANEL/api/apps
+ARK_APPSET=$ARK_PANEL/app-sets
+ARK_CON=$ARK_PANEL/containers
 
 function ark_help ()
 {
