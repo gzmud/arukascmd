@@ -63,7 +63,7 @@ function ark_con_lsd ()
 curl -s -n $ARK_CON \
   -H "Content-Type: application/vnd.api+json"  \
   -H "Accept: application/vnd.api+json" \
-  | jq `.data []`
+  | jq '.data []'
 }
 
 funciton ark_con_on ()
