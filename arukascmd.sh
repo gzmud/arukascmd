@@ -66,7 +66,7 @@ curl -s -n $ARK_CON \
   | jq '.data []'
 }
 
-funciton ark_con_on ()
+function ark_con_on ()
 {
 CONTAINERS_ID=$1
 curl -s -n -X POST $ARK_CON/$CONTAINERS_ID/power \
@@ -75,16 +75,16 @@ curl -s -n -X POST $ARK_CON/$CONTAINERS_ID/power \
   | jq
 }
 
-funciton ark_con_off ()
+function ark_con_off ()
 {
 CONTAINERS_ID=$1
 curl -s -n -X DELETE $ARK_CON/$CONTAINERS_ID/power \
-  -H "Content-Type: application/vnd.api+json" /*-9¡¤ \
+  -H "Content-Type: application/vnd.api+json" /*-9Â¡Â¤ \
   -H "Accept: application/vnd.api+json"
   | jq
 }
 
-funciton ark_con_patch ()
+function ark_con_patch ()
 {
 CONTAINERS_ID=$1
 curl -s -n -X PATCH DELETE $ARK_CON/$CONTAINERS_ID \
