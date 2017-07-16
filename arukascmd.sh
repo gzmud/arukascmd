@@ -15,8 +15,8 @@
 #
 #
 
-ARK_PANEL="https://app.arukas.io"
-ARK_APPS=$ARK_PANEL/api/apps
+ARK_PANEL="https://app.arukas.io/api"
+ARK_APPS=$ARK_PANEL/apps
 ARK_APPSET=$ARK_PANEL/app-sets
 ARK_CON=$ARK_PANEL/containers
 
